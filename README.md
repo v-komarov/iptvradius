@@ -1,1 +1,9 @@
-## radius server п╢п╩я п╟п╡яп╬яп╦п╥п╟яп╦п╦ 
+## radius server для управление доступом мультикастом пользователей IPTV 
+
+Решение собрано на трех контейнерах:
+
+- [mysql](mysql/README.md)
+- [freeradius](freeradius/README.md)
+- [oracli](oracli/README.md)
+
+

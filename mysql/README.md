@@ -1,8 +1,16 @@
 ## Сервер баз данных (mysql)
 
 - **Dockerfile** - для создания образа
-- **beforeauth.sql** -
+- **beforeauth.sql** - хранимая процедура **beforeauth_work**
 - **build.sh** - скрипт создания образа
 - **creare_stru.sql** - команды sql создания структуры таблиц
-- **initdb.sh** -
-- **iptvcanals.sql** - для загрузки в таблицу IPTV_canals 
+- **initdb.sh** - скрипт создания структуры базы, загрузки хранимых процедур
+- **iptvcanals.sql** - для загрузки в таблицу **IPTV_canals** 
+- **iptvpackets.sql** - для загрузки в таблицу **IPTV_packets**
+- **loadcanals.sh** - скрипт загрузки данных в таблицы **IPTV_canals**, **IPTV_packets**, **radfreecharge**
+- **loadpackets.sh** - вспомогательный скрипт
+- **myvars.cnf** - переопределение переменный сервера mysql
+- **procedures.sql** - хранимые процедуры
+- **redfreecharge.sql** - список открытых каналов
+- **radpackets.sql** - данные для загрузки в таблицу **radpackets**
+- **runmysql.sh** - скрипт создания контейнера

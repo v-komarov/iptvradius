@@ -14,3 +14,7 @@
 - **redfreecharge.sql** - список открытых каналов
 - **radpackets.sql** - данные для загрузки в таблицу **radpackets**
 - **runmysql.sh** - скрипт создания контейнера
+
+Пример вывода хранимой процедуры **beforeauth_work**
+
+![beforeauth_work](img/beforeauth_work.png)

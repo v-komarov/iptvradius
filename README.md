@@ -7,3 +7,8 @@
 - [oracli](oracli/README.md)
 
 ![docker ps](img/dockerps.png)
+
+
+Пример успешной авторизации:
+
+![tcpdump](img/tcpdump.png)

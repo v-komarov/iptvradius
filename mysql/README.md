@@ -18,3 +18,8 @@
 Пример вывода хранимой процедуры **beforeauth_work**
 
 ![beforeauth_work](../img/beforeauth_work.png)
+
+
+Фрагмент таблицы **radbilling**
+
+![radbilling](../img/radbilling.png)

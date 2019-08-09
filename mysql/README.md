@@ -1,4 +1,4 @@
-## Сервер баз данных (mysql)
+## Сервер баз данных (mysql) ver 5.6.44
 
 - **Dockerfile** - для создания образа
 - **beforeauth.sql** - хранимая процедура **beforeauth_work**

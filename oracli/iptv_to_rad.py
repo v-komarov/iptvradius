@@ -26,7 +26,7 @@ try:
           SELECT        
               replace(REGEXP_SUBSTR(MM.SITENAME,'[0-9]+'),'','') as cid,
               UPPER(REPLACE(AP."VALUE", '.')) as mac,
-                 CASE WHEN (DS.SERVID = 1706) THEN 0 ELSE 999 
+                 CASE WHEN (DS.SERVID = 1706 OR DS.SERVID = 2694 OR DS.SERVID = 2596) THEN 0 ELSE 999 
               END as pid,
               to_char(DS.BEGDATE, 'yyyy-mm-dd') as date1,
               to_char(DS.ENDDATE, 'yyyy-mm-dd') as date2,
@@ -37,9 +37,9 @@ try:
               LEFT JOIN MAP_MAIN MM2 ON MM2.DMID = DS.DMID
               LEFT JOIN MAP_MAIN MM ON replace(REGEXP_SUBSTR(MM2.SITENAME,'[0-9]+'),'','') = replace(REGEXP_SUBSTR(MM.SITENAME,'[0-9]+'),'','')
 
-              JOIN AUTH_SPEC_PARAMS AP On AP.DMID = MM.DMID AND AP.ATTRCOD = 31
+              JOIN AUTH_SPEC_PARAMS AP On AP.DMID = MM.DMID AND AP.ATTRCOD = 203
 
-            WHERE DS.SERVID in (1706)
+            WHERE DS.SERVID in (1706,2694,2596)
               AND DS.BEGDATE < SYSDATE
               AND (DS.ENDDATE > SYSDATE OR DS.ENDDATE is null) 
               AND AP.CLOSED!=4
@@ -51,12 +51,9 @@ try:
       mysql_x = mysql_conn.cursor()
 
       mysql_x.execute("TRUNCATE TABLE radbilling")
-      #mysql_conn.commit()
       for col1, col2, col3, col4, col5, col6, col7 in cur.fetchall():
-        if(col5 != None):
-          mysql_x.execute("""INSERT INTO radbilling (cid,mac,pid,date1,date2,sid,status) VALUES (%s,%s,%s,%s,%s,%s,%s)""", (col1, col2, col3, col4, col5, col6, col7))
-        else:
-          mysql_x.execute("""INSERT INTO radbilling (cid,mac,pid,date1,sid,status) VALUES (%s,%s,%s,%s,%s,%s)""", (col1, col2, col3, col4, col6, col7))
+          if col2 != None:
+              mysql_x.execute("""INSERT INTO radbilling (cid,mac,pid,date1,date2,sid,status) VALUES (%s,%s,%s,%s,%s,%s,%s)""", (col1, col2, col3, col4, col5, col6, col7))
 
       mysql_conn.commit()
 

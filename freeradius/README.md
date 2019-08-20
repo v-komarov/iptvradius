@@ -6,3 +6,4 @@
 - **sql.conf** - изменения в файле конфигурации
 - **testit.sh** - скрипт тестирования контейнера
 - **testuser.sh** - **radtest**
+- **freeradius.service** - служба systemd

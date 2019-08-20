@@ -1,0 +1,10 @@
+[Unit]
+Description=IPTV freeradius service
+After=freeradiusdb.service
+Requires=freeradiusdb.service
+
+[Service]
+ExecStart=/usr/bin/docker start freeradius
+
+[Install]
+WantedBy=multi-user.target

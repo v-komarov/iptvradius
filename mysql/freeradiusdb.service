@@ -1,0 +1,10 @@
+[Unit]
+Description=IPTV mysql service
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker start freeradiusdb
+
+[Install]
+WantedBy=multi-user.target

@@ -8,4 +8,4 @@
 - **iptv_to_rad.py** - основной скрипт
 - **myloop.sh** - организация цикла для **iptv_to_rad.py**
 - **runoracli.sh** - скрипт создания контейнера
-
+- **oracli.service** - служба systemd

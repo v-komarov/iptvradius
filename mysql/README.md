@@ -14,6 +14,7 @@
 - **redfreecharge.sql** - список открытых каналов
 - **radpackets.sql** - данные для загрузки в таблицу **radpackets**
 - **runmysql.sh** - скрипт создания контейнера
+- **freeradiusdb.service** - служба systemd
 
 Пример вывода хранимой процедуры **beforeauth_work**
 

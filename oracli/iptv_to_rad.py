@@ -26,7 +26,7 @@ try:
           SELECT        
               replace(REGEXP_SUBSTR(MM.SITENAME,'[0-9]+'),'','') as cid,
               UPPER(REPLACE(AP."VALUE", '.')) as mac,
-                 CASE WHEN (DS.SERVID = 1706 OR DS.SERVID = 2694 OR DS.SERVID = 2596 OR DS.SERVID = 2448) THEN 0 ELSE 999 
+                 CASE WHEN (DS.SERVID = 1706 OR DS.SERVID = 2694 OR DS.SERVID = 2596 OR DS.SERVID = 2448 OR DS.SERVID = 3052 OR DS.SERVID = 2694) THEN 0 ELSE 999 
               END as pid,
               to_char(DS.BEGDATE, 'yyyy-mm-dd') as date1,
               to_char(DS.ENDDATE, 'yyyy-mm-dd') as date2,
@@ -39,7 +39,7 @@ try:
 
               JOIN AUTH_SPEC_PARAMS AP On AP.DMID = MM.DMID AND AP.ATTRCOD = 203
 
-            WHERE DS.SERVID in (1706,2694,2596,2448)
+            WHERE DS.SERVID in (1706,2694,2596,2448,3052,2694)
               AND DS.BEGDATE < SYSDATE
               AND (DS.ENDDATE > SYSDATE OR DS.ENDDATE is null) 
               AND AP.CLOSED!=4

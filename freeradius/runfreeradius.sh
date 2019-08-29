@@ -1,7 +1,7 @@
 #!/bin/sh
 
 docker run -itd \
---rm
+--rm \
 --name freeradius \
 --link freeradiusdb:mysql \
 -e RADIUS_LISTEN_IP=* \

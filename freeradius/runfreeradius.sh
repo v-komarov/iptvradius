@@ -1,10 +1,6 @@
 #!/bin/sh
 
-<<<<<<< HEAD
-/usr/bin/docker run -itd \
-=======
-docker run -itd \
->>>>>>> 26628ab9bd5d5920e01ad79afc5521750fbe9dd8
+/usr/bin/docker run -d \
 --rm \
 --name freeradius \
 --link freeradiusdb:mysql \

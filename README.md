@@ -12,3 +12,5 @@
 Пример успешной авторизации:
 
 ![tcpdump](img/tcpdump.png)
+
+- **radtest.py** - скрипт тестирования radius сервера (с передачей Framed-IP-Address реквизита)

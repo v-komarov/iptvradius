@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 /usr/bin/docker run -d \
 --rm \
